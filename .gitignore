@@ -1,0 +1,58 @@
+# dotfiles .gitignore
+# MacOS 🍏
+.AppleDouble
+.LSOverride
+# Folder view configuration files 📂
+.DS_Store
+[Dd]esktop.ini
+# Thumbnail cache files 🖼️
+._*
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+# external disks 💿
+.Spotlight-V100
+.Trashes
+
+# Icon must end with two \r
+Icon
+
+# Files 📂 that might appear＠root of a volume
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+# Directories potentially created on remote AFP share
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk
+
+# Linux 🐧
+*~
+# temporary files which can be created if a process still has a handle open of a deleted file
+.fuse_hidden*
+# KDE directory preferences
+.directory
+# Linux trash folder which might appear on any partition or disk
+.Trash-*
+# .nfs files are created when an open file is removed but is still being accessed
+.nfs*
+
+# Windows 🪟
+*.stackdump
+# Recycle‑Bin used on file‑shares
+$RECYCLE.BIN/
+# Windows installer files 📂
+*.cab
+*.msi
+*.msix
+*.msm
+*.msp
+# Windows shortcuts
+*.lnk
