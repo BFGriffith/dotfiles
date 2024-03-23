@@ -1,0 +1,237 @@
+# alacritty.toml 🚀
+# 🔙 commented lines describe default settings in order to conveniently facilitate explicitly reverting to them…
+# man 5 alacritty (>0.13) for full config manual ℹ️ https://alacritty.org/config-alacritty.html
+# ⚙️ Alacritty doesn’t create a config file automatically, but looks for one in the following locations
+# $XDG_CONFIG_HOME/alacritty/alacritty.toml
+# $XDG_CONFIG_HOME/alacritty.toml
+# $HOME/.config/alacritty/alacritty.toml
+# $HOME/.alacritty.toml
+
+# ⚙️ import additional configuration files using absolute paths starting with꞉ "/" or relative to $HOME starting with꞉ "~/"…
+#import = [
+#"~/.config/alacritty/catpuccin-mocha.toml",
+#"~/.config/alacritty/keybindings.toml",
+#]
+
+# designated shell program＋arguments
+# default for Linux／BSD／MacOS is $SHELL or user’s login shell, while Windows default is Powershell
+[shell]
+program               = "$SHELL" # "/usr/local/bin/zsh"
+args                  = [ "--login", ]
+
+working_directory = "None" # IF unset or None, working‑directory of parent‑process will be used, default＝"None"
+live_config_reload = true # changes require restart, default＝true
+ipc_socket          = true # offer IPC using Alacritty msg (UNIX only)꞉ default＝true
+
+# ENVIRONMENT‑variables
+[env]
+TERM                  = "xterm-256color"
+
+# 🖥️ WINDOW‑settings 🪟
+[window]
+#dimensions            = { columns = 0, lines = 0 }
+#position              = { x = 0, y = 0 } # window startup absolute position
+padding                = { x = 5, y = 5 } # window padding
+dynamic_padding        = false # default＝false
+decorations            = "Full" # default＝"None"
+opacity                = 1.0 # default＝1.0
+blur                   = true # default＝false
+startup_mode           = "Windowed" # startup‑mode꞉ default＝"Windowed"
+#title                 = "Alacritty" # default＝"Alacritty"
+dynamic_title          = true # default＝true
+#class                 = { instance = "Alacritty", general = "Alacritty" } # Window class (Linux／BSD only)꞉ default＝{ instance = "Alacritty", general = "Alacritty" }
+#decorations_theme_variant = "None" # default＝"None"
+#resize_increments     = false # default＝false
+#option_as_alt         = "None" # ⌥ as ALT key (MacOS only)꞉ default＝"None"
+
+# 📜 SCROLLING ↕
+[scrolling]
+history    = 65535 # maximum lines in the scrollback buffer꞉ default＝10000
+multiplier = 1 # number of lines scrolled for every input scroll increment꞉ default＝3
+
+# *️⃣ FONT
+[font]
+normal                = { family = "Space Mono", style = "Regular" } # Linux／BSD꞉ default＝{ family = "monospace", style = "Regular" }
+bold                  = { family = "Space Mono", style = "Bold" } # inherits family from normal unless overridden, default＝{style="Bold"}
+italic                = { family = "Menlo", style = "Italic" } # inherits family from normal unless overridden, default＝{style="Italic"}
+bold_italic           = { family = "Menlo", style = "Bold Italic" } # inherits family from normal unless overridden, default＝{style="Bold Italic"}
+size                  = 20 # font‑size in points꞉ default＝11.25
+offset                = { x = 0, y = 0 } # extra space around each character꞉ default＝{x=0,y=0}
+glyph_offset          = { x = 0, y = 0 } # determines the locations of glyphs within their cells꞉ default＝{x=0,y=0}
+builtin_box_drawing   = true # use built‑in font for box‑drawing characters꞉ default＝true
+
+# 🎨 COLORS
+# catpuccin-mocha, ported from .yml
+[colors.primary]
+background            = "#1E1E2E" # default＝"#181818"
+foreground            = "#CDD6F4" # default＝"#d8d8d8"
+dim_foreground        = "#CDD6F4" # default＝"#828482"
+bright_foreground     = "#CDD6F4" # default＝"None"
+
+[colors.cursor]
+text                  = "#1E1E2E" # default＝"CellBackground"
+cursor                = "#F5E0DC" # default＝"CellForeground"
+
+[colors.vi_mode_cursor]
+text                  = "#1E1E2E" # default＝"CellBackground"
+cursor                = "#B4BEFE" # default＝"CellForeground"
+
+[colors.search.matches]
+foreground            = "#1E1E2E" # default＝"#181818"
+background            = "#A6ADC8" # default＝"#AC4242"
+
+[colors.search.focused_match]
+foreground            = "#1E1E2E" # default＝"#181818"
+background            = "#A6E3A1" # default＝"#F4BF75"
+
+[colors.hints.start]
+foreground            = "#1E1E2E" # default＝"#181818"
+background            = "#F9E2AF" # default＝"#F4BF75"
+
+[colors.hints.end]
+foreground            = "#1E1E2E" # default＝"#181818"
+background            = "#A6ADC8" # default＝"#AC4242"
+
+[colors.line_indicator]
+foreground            = "None" # default＝"None"
+background            = "None" # default＝"None"
+
+[colors.footer_bar]
+foreground            = "#1E1E2E" # default＝"#181818"
+background            = "#A6ADC8" # default＝"#d8d8d8"
+
+[colors.selection]
+text                  = "#1E1E2E" # default＝"CellBackground"
+background            = "#F5E0DC" # default＝"CellForeground"
+
+[colors.normal]
+black                 = "#45475A" # default＝"#181818"
+red                   = "#F38BA8" # default＝"#AC4242"
+green                 = "#A6E3A1" # default＝"#90A959"
+yellow                = "#F9E2AF" # default＝"#F4BF75"
+blue                  = "#89B4FA" # default＝"#6A9FB5"
+magenta               = "#F5C2E7" # default＝"#AA759F"
+cyan                  = "#94E2D5" # default＝"#75B5AA"
+white                 = "#BAC2DE" # default＝"#d8d8d8"
+
+[colors.bright]
+black                 = "#585B70" # default＝"#6b6b6b"
+red                   = "#F38BA8" # default＝"#C55555"
+green                 = "#A6E3A1" # default＝"#AAC474"
+yellow                = "#F9E2AF" # default＝"#FECA88"
+blue                  = "#89B4FA" # default＝"#82B8C8"
+magenta               = "#F5C2E7" # default＝"#C28CB8"
+cyan                  = "#94E2D5" # default＝"#93d3C3"
+white                 = "#A6ADC8" # default＝"#F8F8F8"
+
+[colors.dim]
+black                 = "#45475A" # default＝"#0F0F0F"
+red                   = "#F38BA8" # default＝"#712B2B"
+green                 = "#A6E3A1" # default＝"#5F6F3A"
+yellow                = "#F9E2AF" # default＝"#A17E4d"
+blue                  = "#89B4FA" # default＝"#456877"
+magenta               = "#F5C2E7" # default＝"#704d68"
+cyan                  = "#94E2D5" # default＝"#4d7770"
+white                 = "#BAC2DE" # default＝"#8E8E8E"
+
+[colors]
+indexed_colors = [
+  { index = 16, color = "#FAB387" },
+  { index = 17, color = "#F5E0DC" },
+]
+transparent_background_colors = false # default＝false
+draw_bold_text_with_bright_colors = true # default＝false
+
+# 🔔 BELL
+[bell]
+animation             = "EaseOutExpo" # visual‑bell animation‑effect꞉ default＝"Linear"
+duration              = 0 # default＝0
+color                 = "#C0C5CE" # default＝"#FFFFFF"
+command               = { program = "notify-send", args = ["alacritty", "bell",] } # command executed when the bell is rung꞉ default＝"None"
+
+# ⟦⟧ SELECTION
+[selection]
+#semantic_escape_chars = ",│‘|:"' ()[]{}<>t" # characters used as separators for “semantic words” in Alacritty꞉ default＝",│`|:\"' ()[]{}<>\\t"
+save_to_clipboard     = true # if set to true, selected text will be copied to the primary clipboard꞉ default＝false
+
+# ⌶ CURSOR
+[cursor.style]
+shape                 = "Beam" # default＝"Block"
+blinking              = "Always" # default＝"On"
+
+[cursor.vi_mode_style]
+shape                 = "Block"
+blinking              = "Off"
+# vi_mode_style="None" # default＝"None"
+
+[cursor]
+blink_interval        = 1000 # cursor blinking‑interval in milliseconds꞉ default＝750
+blink_timeout         = 0 # time after which cursor STOPS blinking in seconds꞉ default＝5
+unfocused_hollow      = true # IF true, cursor will be rendered as a hollow box when the window is not focused
+#thickness             = 0.15 # thickness of cursor relative to cell‑width꞉ default＝0.15
+
+# TERMINAL
+[terminal]
+osc52 = "CopyPaste" # default＝"OnlyCopy"
+
+# 🖱️ MOUSE 🐁
+[mouse]
+hide_when_typing = true # IF true, cursor is temporarily hidden when typing꞉ default＝false
+# Mouse‑bindings꞉ defined per user preferences…
+bindings = [
+  { mouse = "Middle", action = "PasteSelection" },
+]
+
+# HINTS꞉ enable specific hints…
+[hints]
+alphabet              = "jfkdls;ahgurieowpq" # define keys used for hint labels꞉ default＝"jfkdls;ahgurieowpq"
+
+# ℹ️ ENABLE specific Hints per user preferences along the lines of the following example configurations…
+#[[hints.enabled]]
+#command               = "xdg-open"
+## command             = "open" # 🍏MacOS
+## command             = { program = "cmd", args = [ "/c", "start", "" ] } # 🪟Windows
+#hyperlinks            = true
+#action = "…"
+#post_processing       = true
+#persist               = false
+# mouse = {mods="…", enabled=true}
+#mouse.enabled         = true
+# binding = {key="…", mods="…", mode="…"}
+#binding               = { key = "U", mods = "Control|Shift" }
+# regex = "…" # specify REGEX patterns
+#regex                 = "(ipfs:|ipns:|magnet:|mailto:|gemini://|gopher://|https://|http://|news:|file:|git://|ssh:|ftp://)[^\u0000-\u001F\u007F-\u009F<>\"\\s{-}\\^⟨⟩‘]+"
+
+# *️⃣ KEYBOARD‑bindings per ideosyncratic user preferences…
+[keyboard]
+bindings = [
+  { key = "V",        mods = "Control|Shift", action = "Paste" },
+  { key = "C",        mods = "Control|Shift", action = "Copy" },
+  { key = "Paste",                            action = "Paste" },
+  { key = "Copy",                             action = "Copy" },
+  { key = "Insert",   mods = "Shift",         action = "PasteSelection" },
+  { key = "F",        mods = "Control|Shift", action = "SearchForward",     mode = "~Search" },
+  { key = "B",        mods = "Control|Shift", action = "SearchBackward",    mode = "~Search" },
+  { key = "Key0",     mods = "Control",       action = "ResetFontSize" },
+  { key = "Equals",   mods = "Control",       action = "IncreaseFontSize" },
+  { key = "Minus",    mods = "Control",       action = "DecreaseFontSize" },
+  { key = "L",        mods = "Control",       action = "ClearLogNotice" },
+  { key = "L",        mods = "Control",       chars  = "\f" },
+  { key = "PageUp",   mods = "Shift",         action = "ScrollPageUp",      mode = "~Alt" },
+  { key = "PageDown", mods = "Shift",         action = "ScrollPageDown",    mode = "~Alt" },
+  { key = "Up",       mods = "Shift",         action = "ScrollLineUp",      mode = "~Alt" },
+  { key = "Down",     mods = "Shift",         action = "ScrollLineDown",    mode = "~Alt" },
+  { key = "Home",     mods = "Shift",         action = "ScrollToTop",       mode = "~Alt" },
+  { key = "End",      mods = "Shift",         action = "ScrollToBottom",    mode = "~Alt" },
+]
+
+# 🪳 debugging‑configurations
+[debug]
+#render_timer          = false
+#persistent_logging    = false
+#log_level             = "Warn"
+#renderer              = "None"
+#print_events          = false
+#highlight_damage      = false
+#prefer_egl            = false
+
